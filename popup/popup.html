@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SEO Preview</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+      body {
+        width: 400px;
+        height: 450px;
+        overflow-y: auto;
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        padding: 16px;
+        background-color: #f3f4f6;
+        color: #1f2937;
+      }
+      h1 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 16px;
+        color: #111827;
+      }
+      #loading {
+        text-align: center;
+        color: #4b5563;
+      }
+      .spinner {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        border: 4px solid #4b5563;
+        border-top: 4px solid transparent;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      .hidden {
+        display: none;
+      }
+      .preview-container {
+        max-width: 100%;
+        margin: 0 auto;
+      }
+      .card {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+        max-width: 100%;
+        transition: box-shadow 0.3s ease;
+      }
+      .card:hover {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+      .card img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+      }
+      .card-content {
+        padding: 16px;
+      }
+      .card-title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #111827;
+      }
+      .card-description {
+        color: #4b5563;
+        font-size: 14px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin-bottom: 8px;
+        line-height: 1.5;
+      }
+      .card-url {
+        color: #6b7280;
+        font-size: 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .error {
+        color: #dc2626;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>SEO Preview</h1>
+    <div id="loading">
+      <div class="spinner" role="status" aria-label="loading">
+        <span class="hidden">Loading...</span>
+      </div>
+      <p>Loading SEO data...</p>
+    </div>
+    <div id="seoInfo" class="hidden">
+      <div class="preview-container">
+        <div class="card">
+          <img id="previewImage" src="" alt="website sharing snapshot" />
+          <div class="card-content">
+            <h2 id="previewTitle" class="card-title"></h2>
+            <p id="previewDescription" class="card-description"></p>
+            <p id="previewUrl" class="card-url"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/popup/popup.js"></script>
+  </body>
+</html>

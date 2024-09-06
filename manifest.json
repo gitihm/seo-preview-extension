@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "SEO Preview",
+  "version": "1.19",
+  "description": "Preview SEO information for web pages",
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "32": "images/default-image.png"
+    }
+  },
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "web_accessible_resources": [
+    {
+      "resources": ["images/default-image.png"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "license": "MIT",
+  "license_url": "https://github.com/gitihm/seo-preview-extension/blob/main/LICENSE"
+}
